@@ -1,0 +1,11 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: I want to install web server Apache2
+      apt:
+        name: Apache2
+        state: present
+    - service:
+        name: Apache2
+        state: started
